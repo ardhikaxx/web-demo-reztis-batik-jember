@@ -32,7 +32,7 @@ Aplikasi e-commerce untuk penjualan produk batik dan layanan edukasi membatik.
 
 1.  **Clone repositori ini:**
     ```bash
-    [git clone https://github.com/username/rezti-batik-jember.git](https://github.com/ardhikaxx/rezti-batik-jember.git)
+    git clone https://github.com/username/rezti-batik-jember.git
     ```
 
 2.  **Masuk ke direktori proyek:**
