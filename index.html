@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezti's Batik Jember | Platform Digital UMKM Batik & Edukasi Membatik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Sriwedari';
+            src: url('assets/font/Sriwedari.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --primary-color: #8B4513;
+            --primary-dark: #5D2906;
+            --primary-light: #B68D65;
+            --secondary-color: #D2B48C;
+            --accent-color: #A0522D;
+            --light-color: #F9F5F0;
+            --dark-color: #3E2723;
+            --text-color: #333333;
+            --text-light: #777777;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F5D76E 100%);
+            --section-padding: 120px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            padding-top: 80px;
+            /* Added for fixed navbar */
+        }
+
+        h1,
+        h2 {
+            font-family: 'Sriwedari';
+            font-weight: 800;
+        }
+
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+
+        .bg-primary-custom {
+            background-color: var(--primary-color);
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-color);
+        }
+
+        .bg-dark-custom {
+            background-color: var(--dark-color);
+        }
+
+        /* ========== Enhanced Navbar Styles ========== */
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            padding: 8px 15px;
+            margin: 0 5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .navbar .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar .nav-link:hover::before,
+        .navbar .nav-link.active::before {
+            transform: scaleX(1);
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--primary-dark) !important;
+        }
+
+        .navbar .btn-nav {
+            margin-left: 10px;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Navbar Styles */
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .navbar-toggler:hover {
+            color: var(--primary-dark);
+        }
+
+        .offcanvas {
+            background-color: white;
+            max-width: 300px;
+        }
+
+        .offcanvas-header {
+            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+            padding: 15px 20px;
+        }
+
+        .offcanvas-title img {
+            height: 50px;
+        }
+
+        .offcanvas-body {
+            padding: 20px;
+        }
+
+        .offcanvas-body .nav-link {
+            padding: 12px 0;
+            margin: 0;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .offcanvas-body .nav-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .offcanvas-body .btn-nav {
+            width: 100%;
+            margin: 15px 0 0;
+            text-align: center;
+        }
+
+        /* Rest of your existing styles... */
+        .btn {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary-custom {
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        .btn-outline-primary-custom {
+            border: 2px solid var(--light-color);
+            color: var(--light-color);
+            background: transparent;
+        }
+
+        .btn-outline-primary-custom:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .btn-gold {
+            background: var(--gradient-gold);
+            color: var(--dark-color);
+            font-weight: 600;
+            border: none;
+        }
+
+        .btn-gold:hover {
+            background: var(--gradient-gold);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--light-color), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-logo {
+            max-width: 220px;
+            margin-bottom: 10px;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons .btn {
+            margin: 0 10px;
+            min-width: 180px;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--section-padding) 0;
+            position: relative;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--light-color);
+        }
+
+        .about-img-container {
+            position: relative;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transform: rotate(-2deg);
+        }
+
+        .about-img-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px dashed var(--primary-color);
+            border-radius: 10px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .about-img {
+            border-radius: 8px;
+            transform: rotate(2deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .about-img:hover {
+            transform: rotate(2deg) scale(1.03);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .tech-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Screenshot Section */
+        .screenshot-item {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .screenshot-img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease;
+        }
+
+        .screenshot-item:hover .screenshot-img {
+            transform: scale(1.03);
+        }
+
+        .screenshot-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .screenshot-item:hover .screenshot-caption {
+            opacity: 1;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .video-container:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 25px;
+        }
+
+        .footer-about {
+            padding-right: 30px;
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+        }
+
+        .footer-links h5 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 20px;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: -5px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 50px;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            :root {
+                --section-padding: 80px;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            :root {
+                --section-padding: 60px;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-links {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons .btn {
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            .hero-buttons .btn:last-child {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/img/logo-reztis-batik.png" alt="Rezti's Batik" height="45">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavbar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tampilan">Tampilan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#video-demo">Demo</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn btn-primary-custom btn-sm btn-nav" href="#video-demo">Lihat Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navbar Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                <img src="./assets/img/logo-reztis-batik.png" alt="Rezti's Batik" height="65">
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tentang" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-info-circle"></i> Tentang
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tampilan" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-images"></i> Tampilan
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#video-demo" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-play-circle"></i> Demo
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-primary-custom btn-sm btn-nav mt-3" href="#video-demo"
+                        data-bs-dismiss="offcanvas">
+                        Lihat Demo
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center hero-content" data-aos="fade-up" data-aos-duration="1000">
+                    <img src="./assets/img/logo-reztis-batik.png" alt="Rezti's Batik Logo" class="img-fluid hero-logo">
+                    <h1 class="hero-title">Rezti's Batik Jember</h1>
+                    <p class="hero-subtitle">Platform Digital UMKM Batik & Edukasi Membatik dengan Sentuhan Modern</p>
+                    <div class="hero-buttons">
+                        <a href="#video-demo" class="btn btn-primary-custom btn-lg">Lihat Video Demo</a>
+                        <a href="#tentang" class="btn btn-outline-primary-custom btn-lg">Tentang Kami</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#tentang" class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="section about-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title">Tentang Website</h2>
+                    <p class="section-subtitle">Selamat datang di Website E-Commerce untuk Rezti's Batik Jember, sebuah
+                        platform digital yang dirancang untuk mendukung UMKM batik di Jawa Timur!</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-img-container">
+                        <img src="https://via.placeholder.com/600x400?text=Rezti's+Batik+Showcase"
+                            alt="About Rezti's Batik" class="img-fluid about-img">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="ps-lg-5">
+                        <h3 class="mb-4">Digitalisasi UMKM Batik Jember</h3>
+                        <p class="mb-4">Website ini tidak hanya menyediakan layanan penjualan batik secara online,
+                            tetapi juga menghadirkan fitur pemesanan layanan edukasi membatik untuk pelestarian budaya
+                            lokal.</p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h5>Untuk Pembeli</h5>
+                                    <ul class="text-start ps-3">
+                                        <li>Registrasi dan login akun</li>
+                                        <li>Jelajahi berbagai produk batik</li>
+                                        <li>Kelola keranjang & pesanan</li>
+                                        <li>Pesan layanan edukasi membatik</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-user-shield"></i>
+                                    </div>
+                                    <h5>Untuk Admin</h5>
+                                    <ul class="text-start ps-3">
+                                        <li>Kelola produk batik</li>
+                                        <li>Pantau data pesanan</li>
+                                        <li>Kelola informasi pembeli</li>
+                                        <li>Atur layanan edukasi</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="bg-white p-4 p-lg-5 rounded-3 shadow-sm">
+                        <h4 class="text-center mb-4">Teknologi yang Digunakan</h4>
+                        <div class="row">
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="tech-icon">
+                                        <i class="fab fa-laravel"></i>
+                                    </div>
+                                    <h6>Laravel 10</h6>
+                                    <small class="text-muted">Framework Backend</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="tech-icon">
+                                        <i class="fab fa-php"></i>
+                                    </div>
+                                    <h6>PHP 8.1</h6>
+                                    <small class="text-muted">Bahasa Pemrograman</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="tech-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <h6>MySQL</h6>
+                                    <small class="text-muted">Database</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="tech-icon">
+                                        <i class="fab fa-js-square"></i>
+                                    </div>
+                                    <h6>JavaScript</h6>
+                                    <small class="text-muted">Frontend Interactivity</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Section -->
+    <section id="tampilan" class="section screenshot-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title">Tampilan Website</h2>
+                    <p class="section-subtitle">Berikut beberapa screenshot dari berbagai halaman website Rezti's Batik
+                        Jember</p>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="screenshot-item">
+                        <img src="https://via.placeholder.com/400x600?text=Homepage" alt="Homepage"
+                            class="img-fluid screenshot-img">
+                        <div class="screenshot-caption">
+                            <h5 class="text-white mb-0">Halaman Utama</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="screenshot-item">
+                        <img src="https://via.placeholder.com/400x600?text=Product+Page" alt="Product Page"
+                            class="img-fluid screenshot-img">
+                        <div class="screenshot-caption">
+                            <h5 class="text-white mb-0">Halaman Produk</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="screenshot-item">
+                        <img src="https://via.placeholder.com/400x600?text=Cart+Page" alt="Cart Page"
+                            class="img-fluid screenshot-img">
+                        <div class="screenshot-caption">
+                            <h5 class="text-white mb-0">Keranjang Belanja</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="screenshot-item">
+                        <img src="https://via.placeholder.com/400x600?text=Checkout+Page" alt="Checkout Page"
+                            class="img-fluid screenshot-img">
+                        <div class="screenshot-caption">
+                            <h5 class="text-white mb-0">Proses Checkout</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="screenshot-item">
+                        <img src="https://via.placeholder.com/400x600?text=Education+Page" alt="Education Page"
+                            class="img-fluid screenshot-img">
+                        <div class="screenshot-caption">
+                            <h5 class="text-white mb-0">Layanan Edukasi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="screenshot-item">
+                        <img src="https://via.placeholder.com/400x600?text=Admin+Dashboard" alt="Admin Dashboard"
+                            class="img-fluid screenshot-img">
+                        <div class="screenshot-caption">
+                            <h5 class="text-white mb-0">Dashboard Admin</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section id="video-demo" class="section video-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="section-title">Video Demo</h2>
+                    <p class="section-subtitle">Tonton video demo untuk melihat fitur-fitur lengkap website Rezti's
+                        Batik Jember</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10" data-aos="zoom-in">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/I8dxXVDDkqs?si=hT8xX78E3UX2bg52" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center" data-aos="fade-up">
+                    <h3 class="mb-4">🛒 Dukung produk lokal, bangga memakai batik!</h3>
+                    <a href="#home" class="btn btn-primary-custom btn-lg">
+                        <i class="fas fa-arrow-up me-2"></i> Kembali ke Atas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-about">
+                        <img src="https://via.placeholder.com/150x50?text=Rezti's+Batik" alt="Rezti's Batik Logo"
+                            class="footer-logo">
+                        <p>Platform Digital UMKM Batik & Edukasi Membatik dari Jember, Jawa Timur. Melestarikan budaya
+                            melalui digitalisasi.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
+                    <h5>Tautan Cepat</h5>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#tentang">Tentang</a></li>
+                        <li><a href="#tampilan">Tampilan</a></li>
+                        <li><a href="#video-demo">Video Demo</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 footer-links">
+                    <h5>Layanan</h5>
+                    <ul>
+                        <li><a href="#">Beli Batik</a></li>
+                        <li><a href="#">Kelas Membatik</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 footer-links">
+                    <h5>Kontak Kami</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Jl. Batik No. 123, Jember, Jawa Timur</li>
+                        <li><i class="fas fa-phone-alt me-2"></i> +62 123 4567 890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@reztisbatik.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Buka: Senin-Sabtu, 08:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center copyright">
+                    <p class="mb-0">&copy; 2023 Rezti's Batik Jember. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function () {
+            var backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Update URL without jumping
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
+                    }
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.offcanvas-body .nav-link').forEach(link => {
+            link.addEventListener('click', function () {
+                const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('mobileNavbar'));
+                offcanvas.hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
